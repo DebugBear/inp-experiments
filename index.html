@@ -1,6 +1,139 @@
 <!DOCTYPE html>
 <html>
-    <body>
-        Hello world
-    </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital@1&family=Roboto&display=swap" rel="stylesheet">
+
+
+</head>
+
+<body>
+  <div style="margin: auto; max-width: 1000px;">
+  <div id="timer-container">
+    <p style="font-size: 12px">If the timer pauses<br/>the CPU is blocked.</p>
+    <div id="timer">
+      00:00
+    </div>
+  </div>
+  <div id="table-container">
+
+  </div>
+
+
+
+  <header>
+    <img style="margin-top: 30px;" src="DebugBear_38x40 wgithe border.WEBM.png">
+    <h1 style="margin-top: 30px; margin-bottom: 10px;">DebugBear INP Experiments</h1>
+    
+    <p>Small experiments to learn more about how <a href="https://www.debugbear.com/docs/metrics/interaction-to-next-paint" style="color: white" target="_blank" rel="noreferrer">Interaction to Next Paint</a> is measured.</p>
+    <p style="font-size: 12px;">This demo will only work in Chrome.</p>
+  </header>
+
+
+  <hr>
+  <h2>Base case</h2>
+  <p>This button has a click handler that blocks the CPU for 500 ms. Click on it to see
+  the interaction delay at the bottom of this page.</p>
+
+  <p>You can also check what happens if you click it several times in row.</p>
+  <button id="example3">500ms delay</button>
+
+  <!-- <hr> -->
+
+  <!-- <h2>Example 2</h2>
+  <p>The first button causes a 1s blocking task to be scheduled 1s later. Click the second button either a) before the
+    scheduled task runs b) while the scheduled task runs.</p>
+  <button id="example2-a">schedule 2s task 1s from now</button>
+  <button id="example2-b">trigger 4s task</button> -->
+
+
+  <!-- TODO
+  1. A single button with a click handler and a 500ms delay
+  2. A single button with a 
+  500ms pointerdown delay
+  1000ms click delay
+  2000ms pointerup delay
+  3. show when the settimeout in example-2 happen, ie. change the button color in the settimeout handler (done)
+  4. input field where each keystroke has a 200ms event handler
+  5. single button, with 1000ms pointerdown delay + 2s click
+  a) normal click
+  b) click and hold 
+## next:
+  5.c) mobile drag
+
+  6. log interactions via the web-vitals librayr -- log each one + breakdown (PresentationDelay = start + duration - processingEnd)
+
+  7. position fixed div in the bottom right corner that updates every 200ms, so ppl can see whether cpu is blocked -- put a timer counting from 0.0s up
+
+
+  -->
+
+
+  <hr>
+  <h2>Different event handlers</h2>
+  <p>This button has a 500ms pointerdown delay, 1000ms click delay, and a 2000ms pointerup delay.</p>
+    <p>Click the button and look at the individual interaction entries.
+      You can also try clicking and holding the mouse button before releasing it.</p>
+  <button id="example4">Different delays</button>
+
+    <p>You can also use this button to see how different interactions interact.</p>
+    
+    <!-- <button id="example6">1s pointerdown + 4s click</button> -->
+
+    <hr>
+    <h2>Button drag</h2>
+    <p>Try clicking and then dragging out of this button before releasing the mouse button.</p>
+    <button id="example7">400ms pointerdown + 400ms click</button>
+
+    
+  <hr>
+  <h2>Keyboard input</h2>
+  <p>This text field has a 200ms delay in the keydown handler. Try typing quickly and slowly.</p>
+  <input id="example5" type="search">
+
+  
+  <hr>
+  <h2>Sliders</h2>
+    
+  <p>INP is recorded on sliders once a value has been selected on Pointerup. Dragging the slider back and forth do not count as individual interactions.
+  </p>
+  <p>INP will be measured on Pointerup even if the slider hasn't been moved.</p>
+  <p>On mobile it's possible to interact with the slider and then scroll the page only if there has been no change in
+    value. In this case INP is not measured. Moving across a step and changing value makes scrolling impossible and INP
+    is then measured. </p>
+  <input type="range" id="example8" name="slider1" min="0" max="10" step="1">
+
+  <hr>
+  <h2>Impact of hover effects</h2>
+
+  <p>This example shows how an activity such as hovering can affect INP even though it's not considered as an
+    interaction. The Hover button has a background-color transition of 1s. There is a Mouseenter handler which blocks the CPU for 600ms. </p>
+
+  <p>Clicking the Hover button may have an input delay because of the existing handler.
+    </p>
+  <button id="example9">Hover</button>
+
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+  <br /><br /><br /><br /><br /><br /><br />
+
+     <!--     I think the hover effect will have no noticeable impact. Instead can we 
+    - have one button only 
+    - this button has a mouseenter handler causing a 300ms cpu block
+      (but I think it doesn't count as in interaction)
+      - users are then encouraged to click and the interaction might have an input delay because of the existing handler
+     -->
+    
+</body>
+<script src="script.js"></script>
+<script src="script2.js">
+
+</script>
+  </div>
 </html>
