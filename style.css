@@ -1,0 +1,132 @@
+* {
+  font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html {
+  display: grid;
+  place-items: center;
+  background-color: #094f78;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+hr {
+  border-color: rgba(255,255,255,0.2);
+  margin: 60px 0px;
+}
+
+p, h2 {
+  padding-left: 10px;
+}
+
+
+img {
+  height: 50px;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+button {
+  background-color: #0a76a7;
+  color: #FFF;
+  border-radius: 5px;
+  min-height: 40px;
+  font-size: 20px;
+  padding: 1em;
+  margin: 10px;
+}
+
+input {
+  margin: 10px;
+  border: 2px darkblue solid;
+  min-height: 40px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#timer-container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 70px;
+  width: 125px;
+  font-size: 2em;
+  background-color: white;
+  /* border-radius: 25px; */
+  margin-right: 10px;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  padding-bottom: 10px;
+  border: 2px black solid;
+}
+
+#timer-container>p {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+#timer {
+  font-size: 22px;
+}
+
+#example8 {
+  width: 350px;
+}
+
+#example9 {
+  transition: background-color 1s;
+}
+
+#example9:hover {
+  background-color: black;
+}
+
+table {
+  margin-bottom: 300px;
+  margin-top: 200px;
+  margin-left: 50px;
+}
+
+td,
+tr,
+th {
+  padding: 4px;
+  text-align: left;
+}
+
+#event-table {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  /* border-radius: 25px; */
+  width: calc(100vw - 30px);
+  color: black;
+  border: 2px solid black;
+}
+
+#event-table td:not(:nth-child(2)) {
+  text-align: right;
+}
+
+#event-table th:not(:nth-child(2)) {
+  text-align: right;
+}
+
+
