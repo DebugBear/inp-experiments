@@ -52,6 +52,7 @@ function renderInteractionEntries(interactionEntries) {
         && e.name !== "pointerover" && e.name !== "pointerleave" && e.name !== "pointerenter" && e.name !== "gotpointercapture"
         && e.name !== "pointerout"
         && e.name !== "mouseover"
+        && e.name !== "input"
         && e.name !== "mouseout"&& e.name !== "mouseenter"
 
     }).slice(-5).reverse().map(entry => {
