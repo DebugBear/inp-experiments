@@ -54,6 +54,8 @@ function renderInteractionEntries(interactionEntries) {
         && e.name !== "mouseover"
         && e.name !== "input"
         && e.name !== "mouseout"&& e.name !== "mouseenter"
+        && e.name !== "keypress"
+        && e.name !== "keyup"
 
     }).slice(-5).reverse().map(entry => {
       return `<tr id="row1">
