@@ -99,9 +99,9 @@ document.getElementById("example4").addEventListener('pointerup', function() {
 
 /* EXAMPLE 5 */
 
-document.getElementById("example5").addEventListener('keyup', function() {
-  console.log("keyup")
-  blockCPU(200)
+document.getElementById("example5").addEventListener('keydown', function() {
+  console.log("keydown")
+  blockCPU(400)
 });
 
 
